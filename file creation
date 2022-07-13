@@ -1,0 +1,12 @@
+---
+- hosts: all
+  tasks:
+   - name: creating multiple directories at a time
+     file:
+       path: /opt/{{item}}
+       state: directory
+       owner: root
+       mode: 0724
+     with_items:
+       - add.java
+       - sum.java
